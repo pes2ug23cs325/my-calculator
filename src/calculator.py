@@ -42,8 +42,32 @@ def divide(a, b):
     print(f"[INFO] Computed quotient = {quotient}")
     return quotient
 
+
+def power(a, b):
+    """Raise a to the power of b."""
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Power function requires numeric inputs")
+    print(f"[INFO] Calculating {a} ^ {b}")
+    result = a ** b
+    print(f"[INFO] Result = {result}")
+    return result
+
+
+def sqrt(a):
+    """Return the square root of a number."""
+    if not isinstance(a, (int, float)):
+        raise TypeError("Sqrt function requires a numeric input")
+    if a < 0:
+        raise ValueError("Cannot compute square root of a negative number")
+    print(f"[INFO] Calculating √{a}")
+    result = math.sqrt(a)
+    print(f"[INFO] Result = {result}")
+    return result
+
+
 if __name__ == "__main__":
     print("🧮 Calculator Module")
     print(f"2 + 3 = {add(2, 3)}")
     print(f"5 - 2 = {subtract(5, 2)}")
-
+    print(f"2 ^ 3 = {power(2, 3)}")
+    print(f"√16 = {sqrt(16)}")
